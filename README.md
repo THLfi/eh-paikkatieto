@@ -57,7 +57,7 @@ Riskialueluokat määräytyvät seuraavasti:
    - Keskusta-alueiden ja Taajama-aineistojen perusteella tunnistetaan "Ydintaajama" ja "Muu taajama" luokat.
    - Väestötietojen avulla tunnistetaan "Asuttu maaseutu" luokat.
    - Väestötietoaineisto liitetään tilastoruudukkoon ruudun id-numeron perusteella.
-   - 250 metrin ruudukkoaineistojen liittämisessä 1000 m tilastoruudukkoon käytetään predikaatteja _overlaps_ ja _within_.
+   - 250 metrin ruudukkoaineistojen liittämisessä 1000 m tilastoruudukkoon käytetään predikaattia (_overlaps_ TAI _contains_ TAI _within_), jolloin saavutetaan visuaalisesti tarkasteltuna haluttu lopputulos.
 4. Täydennetään aineisto väestötiedoilla ja muodostetaan lopulliset riskialueaineistot asutuille ruuduille.
 5. Tallennetaan lopputulokset shapefile-muodossa.
 
