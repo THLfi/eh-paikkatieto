@@ -1,0 +1,21 @@
+[project]
+name = "eh-paikkatieto"
+version = "0.1.0"
+description = "Ensihoitopalvelun tilastoruudukko ja riskialuejako"
+authors = [
+    { name = "Simo Mäkelä", email = "simo.makela@thl.fi" }
+]
+dependencies = [
+    "geopandas>=0.14.3",
+    "pyarrow>=15.0.0",
+    "pandas>=2.2.1",
+]
+readme = "README.md"
+requires-python = ">= 3.9"
+
+[tool.rye]
+managed = true
+virtual = true
+dev-dependencies = [
+    "ruff>=0.2.2",
+]
