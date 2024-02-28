@@ -1,3 +1,4 @@
+import os
 import geopandas as gpd
 
 # revision info - year and revision number
@@ -13,8 +14,9 @@ SHP_TAAJAMA = "input/YKRTaajamat2022.zip"
 SHP_KESKUSTA = "input/KeskustaAlueet2021.zip"
 
 # output files
-SHP_EH_FULLGRID = f"output/eh_all_1km_{REVISION}.shp.zip"
-SHP_EH_POPULATED = f"output/eh_populated_1km_{REVISION}.shp.zip"
+OUTPUTDIR = "output"
+SHP_EH_FULLGRID = f"{OUTPUTDIR}/eh_all_1km_{REVISION}.shp.zip"
+SHP_EH_POPULATED = f"{OUTPUTDIR}/eh_populated_1km_{REVISION}.shp.zip"
 
 # risk classes
 RISK_ID_YDINTAAJAMA = 1
@@ -76,6 +78,9 @@ def classify_squares(grid, taajama, keskusta):
 
 
 if __name__ == "__main__":
+    if not os.path.exists(OUTPUTDIR):
+        os.makedirs(OUTPUTDIR)
+
     # load input shapefiles
     gdf_grid = gpd.read_file(SHP_GRID)
     gdf_vaesto = gpd.read_file(SHP_VAESTO)
